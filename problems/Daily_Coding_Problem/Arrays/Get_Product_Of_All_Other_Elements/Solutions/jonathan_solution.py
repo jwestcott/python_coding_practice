@@ -1,6 +1,8 @@
-def assert_equals(expected: object, received: object) -> bool:
-    print("Expected: {}, Received: {}".format(expected, received))
-    return expected == received
+def assert_equals(expected: object, received: object):
+    success_character = "\u2717"
+    if expected == received:
+        success_character = "\u2713"
+    print("Expected: {}, Received: {} {}".format(expected, received, success_character))
 
 
 def product_of_all_other_elements(arr: list) -> list:
