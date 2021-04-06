@@ -6,8 +6,10 @@ For example, if the input was:
 <img src="https://render.githubusercontent.com/render/math?math=\left[1,2,3,4,5\right]">, 
 
 the expected output would be:
- 
-<img src="https://render.githubusercontent.com/render/math?math=\left[120, 60, 40, 30, 24\right]">. 
+
+<p align="center">
+    <img src="https://render.githubusercontent.com/render/math?math=\left[120, 60, 40, 30, 24\right]">. 
+</p>
 
 If the input was: 
 
