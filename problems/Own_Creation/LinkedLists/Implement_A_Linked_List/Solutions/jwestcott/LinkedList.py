@@ -3,7 +3,7 @@ class LinkedList:
     def __init__(self):
         self.start_node: LinkedListNode = None
 
-    def append(self, element: object):
+    def append(self, element: object) -> None:
         """Adds an element to the end of the Linked List"""
         if self.start_node is None:
             self.start_node = LinkedListNode(element)
