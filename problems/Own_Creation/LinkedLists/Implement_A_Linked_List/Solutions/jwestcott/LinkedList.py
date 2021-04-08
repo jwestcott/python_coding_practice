@@ -44,6 +44,17 @@ class LinkedList:
             current_node = current_node.next_node
         return count
 
+    def __repr__(self) -> str:
+        """Provides a string representation of the LinkedList"""
+        start_string = "LinkedList(["
+        contents_string = ""
+        current_node = self.start_node
+        while current_node is not None:
+            contents_string += "{},".format(current_node.stored_object)
+            current_node = current_node.next_node
+        end_string = "])"
+        return start_string + contents_string[:-1] + end_string
+
 
 class LinkedListNode:
 
