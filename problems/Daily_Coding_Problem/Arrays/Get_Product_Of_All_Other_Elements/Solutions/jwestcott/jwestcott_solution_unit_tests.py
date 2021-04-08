@@ -1,8 +1,8 @@
 import unittest
 
-import jonathan_solution_original as orig
-import jonathan_solution_no_division as no_div
-import jonathan_solution_pre_computed as pre_comp
+import jwestcott_solution_original as orig
+import jwestcott_solution_no_division as no_div
+import jwestcott_solution_pre_computed as pre_comp
 
 
 class TestProductOfAllOtherElements(unittest.TestCase):
