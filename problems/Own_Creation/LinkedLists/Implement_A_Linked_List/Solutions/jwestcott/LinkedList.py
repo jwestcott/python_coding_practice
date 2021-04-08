@@ -26,7 +26,7 @@ class LinkedList:
             return count
 
     def get(self, index: int) -> object:
-        """Returns the element of the Linked List at the passed index."""
+        """Returns the element of the Linked List at the passed index"""
         if self.start_node is None:
             raise IndexError("LinkedList is currently empty")
         current_node = self.start_node
