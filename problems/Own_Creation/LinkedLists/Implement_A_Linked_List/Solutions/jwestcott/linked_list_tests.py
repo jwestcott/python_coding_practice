@@ -23,13 +23,13 @@ class LinkedListTests(unittest.TestCase):
             self.object_under_test.append(i)
         self.assertEqual(i, self.object_under_test.start_node.next_node.stored_object)
 
-    def test_LinkedList_count_returns_0_if_not_elements_have_been_added(self) -> None:
-        self.assertEqual(0, self.object_under_test.count())
+    def test_LinkedList_len_returns_0_if_not_elements_have_been_added(self) -> None:
+        self.assertEqual(0, len(self.object_under_test))
 
-    def test_LinkedList_count_returns_3_if_3_elements_have_been_added(self) -> None:
+    def test_LinkedList_len_returns_3_if_3_elements_have_been_added(self) -> None:
         for i in range(3):
             self.object_under_test.append(i)
-        self.assertEqual(3, self.object_under_test.count())
+        self.assertEqual(3, len(self.object_under_test))
 
     def test_LinkedList_get_raises_IndexError_if_no_elements_have_been_added(self) -> None:
         self.assertRaises(IndexError, self.object_under_test.get, 0)
