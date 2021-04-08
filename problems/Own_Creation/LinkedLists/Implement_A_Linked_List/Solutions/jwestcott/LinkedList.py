@@ -32,7 +32,7 @@ class LinkedList:
         current_node = self.start_node
         for _ in range(index):
             if current_node is None:
-                raise IndexError("Index is longer than Linked List")
+                raise IndexError("Index is out of bounds")
             else:
                 current_node = current_node.next_node
         return current_node.stored_object
