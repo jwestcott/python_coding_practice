@@ -26,7 +26,7 @@ class LinkedListTests(unittest.TestCase):
     def test_LinkedList_count_returns_0_if_not_elements_have_been_added(self):
         self.assertEqual(0, self.object_under_test.count())
 
-    def test_LinkedList_count_returns_2_if_2_elements_have_been_added(self):
+    def test_LinkedList_count_returns_3_if_3_elements_have_been_added(self):
         for i in range(3):
             self.object_under_test.append(i)
         self.assertEqual(3, self.object_under_test.count())
