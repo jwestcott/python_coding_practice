@@ -1,10 +1,3 @@
-def assert_equals(expected: object, received: object):
-    success_character = "\u2717"
-    if expected == received:
-        success_character = "\u2713"
-    print("Expected: {}, Received: {} {}".format(expected, received, success_character))
-
-
 def product_of_all_other_elements(arr: list) -> list:
     prefix_array = get_prefix_array(arr)
     postfix_array = get_postfix_array(arr)
@@ -27,5 +20,5 @@ def get_postfix_array(arr: list) -> list:
 
 
 if __name__ == "__main__":
-    assert_equals([120, 60, 40, 30, 24], product_of_all_other_elements([1, 2, 3, 4, 5]))
-    assert_equals([2, 3, 6], product_of_all_other_elements([3, 2, 1]))
+    input_array = [1, 2, 3, 4, 5]
+    print("input: {}, output: {}".format(input_array, product_of_all_other_elements(input_array)))
