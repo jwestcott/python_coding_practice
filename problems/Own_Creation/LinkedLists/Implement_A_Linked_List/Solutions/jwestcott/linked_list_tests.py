@@ -44,6 +44,17 @@ class LinkedListTests(unittest.TestCase):
             self.object_under_test.append("test_element_{}".format(i))
         self.assertEqual("test_element_2", self.object_under_test.get(1))
 
+    def test_LinkedList_count_returns_0_if_there_are_no_matching_elements(self) -> None:
+        for i in range(10):
+            self.object_under_test.append(i)
+        self.assertEqual(0, self.object_under_test.count(11))
+
+    def test_LinkedList_count_returns_3_if_there_are_3_matching_elements(self) -> None:
+        test_string = "test"
+        for _ in range(3):
+            self.object_under_test.append(test_string)
+        self.assertEqual(3, self.object_under_test.count(test_string))
+
 
 if __name__ == "__main__":
     unittest.main()

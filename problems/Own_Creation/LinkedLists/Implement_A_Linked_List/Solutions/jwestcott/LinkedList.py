@@ -13,6 +13,16 @@ class LinkedList:
                 current_node = current_node.next_node
             current_node.next_node = LinkedListNode(element)
 
+    def count(self, element: object) -> int:
+        """Returns the number of elements with the passed value"""
+        count = 0
+        current_node = self.start_node
+        while current_node is not None:
+            if current_node.stored_object == element:
+                count += 1
+            current_node = current_node.next_node
+        return count
+
     def get(self, index: int) -> object:
         """Returns the element of the Linked List at the passed index"""
         if self.start_node is None:
@@ -28,14 +38,11 @@ class LinkedList:
     def __len__(self) -> int:
         """Returns the number of elements currently in the Linked List"""
         count = 0
-        if self.start_node is None:
-            return count
-        else:
-            current_node = self.start_node
-            while current_node is not None:
-                count += 1
-                current_node = current_node.next_node
-            return count
+        current_node = self.start_node
+        while current_node is not None:
+            count += 1
+            current_node = current_node.next_node
+        return count
 
 
 class LinkedListNode:
