@@ -25,6 +25,18 @@ class LinkedList:
                 current_node = current_node.next_node
             return count
 
+    def get(self, index: int) -> object:
+        """Returns the element of the Linked List at the passed index."""
+        if self.start_node is None:
+            raise IndexError("LinkedList is currently empty")
+        current_node = self.start_node
+        for _ in range(index):
+            if current_node is None:
+                raise IndexError("Index is longer than Linked List")
+            else:
+                current_node = current_node.next_node
+        return current_node.stored_object
+
 
 class LinkedListNode:
 

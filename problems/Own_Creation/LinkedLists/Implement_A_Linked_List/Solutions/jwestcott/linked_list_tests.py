@@ -31,6 +31,19 @@ class LinkedListTests(unittest.TestCase):
             self.object_under_test.append(i)
         self.assertEqual(3, self.object_under_test.count())
 
+    def test_LinkedList_get_raises_IndexError_if_no_elements_have_been_added(self) -> None:
+        self.assertRaises(IndexError, self.object_under_test.get, 0)
+
+    def test_LinkedList_get_raises_Index_error_if_the_desired_index_is_out_of_range(self) -> None:
+        test_element = "test"
+        self.object_under_test.append(test_element)
+        self.assertRaises(IndexError, self.object_under_test.get, 2)
+
+    def test_LinkedList_get_correctly_returns_the_desired_index(self) -> None:
+        for i in range(1, 4):
+            self.object_under_test.append("test_element_{}".format(i))
+        self.assertEqual("test_element_2", self.object_under_test.get(1))
+
 
 if __name__ == "__main__":
     unittest.main()
