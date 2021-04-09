@@ -35,6 +35,24 @@ class LinkedList:
                 current_node = current_node.next_node
         return current_node.stored_object
 
+    def insert(self, index: int, element: object) -> None:
+        """"Inserts element at the specified index. If the index is out of bounds, add to the end of the LinkedList"""
+        new_node = LinkedListNode(element)
+        if index == 0:
+            new_node.next_node = self.start_node
+            self.start_node = new_node
+        else:
+            current_node = self.start_node
+            for _ in range(index - 1):
+                if current_node is None:
+                    raise IndexError("Index is out of bounds")
+                if current_node.next_node is None:
+                    break
+                else:
+                    current_node = current_node.next_node
+            new_node.next_node = current_node.next_node
+            current_node.next_node = new_node
+
     def __len__(self) -> int:
         """Returns the number of elements currently in the Linked List"""
         count = 0

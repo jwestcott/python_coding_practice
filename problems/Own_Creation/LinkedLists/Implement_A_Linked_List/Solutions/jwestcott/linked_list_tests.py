@@ -55,6 +55,40 @@ class LinkedListTests(unittest.TestCase):
             self.object_under_test.append(test_string)
         self.assertEqual(3, self.object_under_test.count(test_string))
 
+    def test_LinkedList_insert_correctly_inserts_element_at_start_node_if_list_is_empty(self) -> None:
+        test_data = "test"
+        self.object_under_test.insert(0, test_data)
+        self.assertEqual(test_data, self.object_under_test.start_node.stored_object)
+
+    def test_LinkedList_insert_correctly_inserts_element_at_start_node_if_list_is_not_empty(self) -> None:
+        for i in range(3):
+            self.object_under_test.append(i)
+        test_data = "test"
+        self.object_under_test.insert(0, test_data)
+        self.assertEqual(test_data, self.object_under_test.start_node.stored_object)
+        self.assertEqual(0, self.object_under_test.start_node.next_node.stored_object)
+
+    def test_LinkedList_insert_correctly_inserts_element_at_specified_location(self) -> None:
+        for i in range(3):
+            self.object_under_test.append(i)
+        test_data = "test"
+        self.object_under_test.insert(1, test_data)
+        self.assertEqual(test_data, self.object_under_test.get(1))
+
+    def test_LinkedList_insert_does_not_remove_already_existing_elements(self) -> None:
+        for i in range(3):
+            self.object_under_test.append(i)
+        test_data = "test"
+        self.object_under_test.insert(2, test_data)
+        self.assertEqual(4, len(self.object_under_test))
+
+    def test_LinkedList_insert_adds_element_to_end_of_LinkedList_if_index_is_out_of_bounds(self) -> None:
+        for i in range(3):
+            self.object_under_test.append(i)
+        test_data = "test"
+        self.object_under_test.insert(100, test_data)
+        self.assertEqual(test_data, self.object_under_test.get(3))
+
 
 if __name__ == "__main__":
     unittest.main()
